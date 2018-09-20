@@ -1,0 +1,35 @@
+<div class="form-group">
+    <label for="categoryId">Category</label>
+    <input type="text" class="form-control" name="categoryId" [(ngModel)]="categoryId">
+    <label for="name">Title</label>
+    <input type="text" class="form-control" name="name" [(ngModel)]="name">
+    <label for="sortColumn">SortColumn</label>
+    <input type="text" class="form-control" name="SortColumn" [(ngModel)]="sortColumn">
+    <label for="sortValue">SortValue</label>
+    <input type="text" class="form-control" name="sortValue" [(ngModel)]="sortValue">
+
+
+ </div>
+<div class="form-group">
+    <button type="button" (click)="getProducts()">Get Books</button>
+</div>
+<div class='table-responsive'>
+    <table class='table'>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category_name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products;">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.category_name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
